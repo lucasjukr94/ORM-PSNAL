@@ -1,0 +1,119 @@
+﻿@model Objects.Geral.Agendas
+
+<div>
+    <div class="box-header with-border">
+        <h3 class="box-title">Agenda</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <table style="width: 100%" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>Segunda</th>
+                    <th>Terça</th>
+                    <th>Quarta</th>
+                    <th>Quinta</th>
+                    <th>Sexta</th>
+                    <th>Sábado</th>
+                    <th>Domingo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="height: 60px;">Manhã</td>
+                    <td>
+                        @Model.DMSeg<br/>
+                        @Model.SMSeg
+                    </td>
+                    <td>
+                        @Model.DMTer<br />
+                        @Model.SMTer
+                    </td>
+                    <td>
+                        @Model.DMQuar<br />
+                        @Model.SMQuar
+                    </td>
+                    <td>
+                        @Model.DMQuin<br />
+                        @Model.SMQuin
+                    </td>
+                    <td>
+                        @Model.DMSex<br />
+                        @Model.SMSex
+                    </td>
+                    <td>
+                        @Model.DMSab<br />
+                        @Model.SMSab
+                    </td>
+                    <td>
+                        @Model.DMDom<br />
+                        @Model.SMDom
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 60px;">Tarde</td>
+                    <td>
+                        @Model.DTSeg<br />
+                        @Model.STSeg
+                    </td>
+                    <td>
+                        @Model.DTTer<br />
+                        @Model.STTer
+                    </td>
+                    <td>
+                        @Model.DTQuar<br />
+                        @Model.STQuar
+                    </td>
+                    <td>
+                        @Model.DTQuin<br />
+                        @Model.STQuin
+                    </td>
+                    <td>
+                        @Model.DTSex<br />
+                        @Model.STSex
+                    </td>
+                    <td>
+                        @Model.DTSab<br />
+                        @Model.STSab
+                    </td>
+                    <td>
+                        @Model.DTDom<br />
+                        @Model.STDom
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 60px;">Noite</td>
+                    <td>
+                        @Model.DNSeg<br />
+                        @Model.SNSeg
+                    </td>
+                    <td>
+                        @Model.DNTer<br />
+                        @Model.SNTer
+                    </td>
+                    <td>
+                        @Model.DNQuar<br />
+                        @Model.SNQuar
+                    </td>
+                    <td>
+                        @Model.DNQuin<br />
+                        @Model.SNQuin
+                    </td>
+                    <td>
+                        @Model.DNSex<br />
+                        @Model.SNSex
+                    </td>
+                    <td>
+                        @Model.DNSab<br />
+                        @Model.SNSab
+                    </td>
+                    <td>
+                        @Model.DNDom<br />
+                        @Model.SNDom
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = "~/Views/Shared/MasterLogin.cshtml";
+    ViewBag.Title = "Cadastrar";
+}
+
+@model Objects.Geral.Usuario
+
+@using (Html.BeginForm("Cadastro", "Login", FormMethod.Post))
+{
+    <div class="login-box">
+        <div class="login-logo">
+            Cadastro
+        </div>
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+            <p class="login-box-msg">Sign up to start your session</p>
+            Nome:
+            <div class="form-group has-feedback">
+                @Html.TextBoxFor(x => x.nome, new {@class = "form-control"})
+                <span class="glyphicon glyphicon-tag form-control-feedback"></span>
+            </div>
+            Login:
+            <div class="form-group has-feedback">
+                @Html.TextBoxFor(x => x.login, new {@class = "form-control"})
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
+            Senha:
+            <div class="form-group has-feedback">
+                @Html.TextBoxFor(x => x.senha, new {@type = "password", @class = "form-control"})
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            E-mail:
+            <div class="form-group has-feedback">
+                @Html.TextBoxFor(x => x.email, new {@class = "form-control"})
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+                <div class="row">
+                    <!-- /.col -->
+                    <div class="col-xs-12">
+                        <a class="btn btn-default" href="@Url.Action("Logout", "Login")">Voltar</a>
+                        <input style="float:right" class="btn btn-default" type="submit" value="Cadastrar"/>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            <br />
+            <br/>
+            @Html.ValidationSummary()
+        </div>
+        <!-- /.login-box-body -->
+    </div>
+}

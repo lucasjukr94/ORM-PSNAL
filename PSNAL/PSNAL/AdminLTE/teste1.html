@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>navbar</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+	<!-- Ionicons -->
+	<link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+	<!-- Theme style -->
+	<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+	<!-- AdminLTE Skins. Choose a skin from the css/skins
+	   folder instead of downloading all of them to reduce the load. -->
+	<link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+	<!-- Morris chart -->
+	<link rel="stylesheet" href="bower_components/morris.js/morris.css">
+	<!-- jvectormap -->
+	<link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
+	<!-- Date Picker -->
+	<link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+	<!-- Daterange picker -->
+	<link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
+	<!-- bootstrap wysihtml5 - text editor -->
+	<link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+	<script>
+	$(document).ready(function(){
+		$("#button1").click(function(){
+			$("#table1").toggle();
+			$("#muda").animate({height:'70px'},"slow");
+			$("#logo").animate({height:'70px'},"slow");
+			$("#table2").toggle(1000);
+		});
+		$("#button2").click(function(){
+			$("#table2").toggle();
+			$("#table1").toggle(1000);
+			$("#muda").animate({height:'50px'},"slow");
+			$("#logo").animate({height:'50px'},"slow");
+			
+		});
+		$(".layoutoptions").click(function(){
+			$("#portalside").animate({width:'toggle'},"slow");
+		});
+		$("img").click(function(){
+			$("#perfil").slideToggle(300);
+		});
+		$(".widgets").click(function(){
+			$("#portal").slideToggle(300);
+		});
+		$(".dashboard").click(function(){
+			$("#portal2").slideToggle(300);
+		});
+	});
+	</script>
+	<style>
+	.dropdown-submenu {
+		position: relative;
+	}
+
+	.dropdown-submenu .dropdown-menu {
+		top: 0;
+		left: 100%;
+		margin-top: -1px;
+	}
+	html {
+		position: relative;
+		min-width: 1200px;
+		min-height: 768px;
+		height: 100%;
+	}
+	</style>
+</head>
+<body style="background-color:#f4f5f7">
+<div id="logo" style="float:left;background-color:white;width:15%;height:50px;">
+	<img src="lotus-logo.png" style="width:150px;height:50px;margin-left:20px"/>
+</div>
+<div id="perfil" style="display:none;position:absolute;left:80%;top:50px;background-color:gray;height:300px;width:300px;text-align:center">
+		<img src="http://www.codeproject.com/KB/GDI-plus/ImageProcessing2/img.jpg" style="width:150px;height:150px;border-radius:150px"/>
+	<br/><br/><p style="color:white">Cachorro</p>
+	<br/><br/>
+	<button type="button"  class="btn btn-primary" onclick="window.location='#'">SAIR</button>
+</div>
+<div id="muda" style="background-color:gray;float:left;width:85%">
+	<div id="table1">
+		<table id="table1" align="center">
+			<tr>
+				<td width="100px">
+					<a href="#" id="button1" style="color:white"><span class="glyphicon glyphicon-align-justify"></span></a>
+				</td>
+				<td width="100px"><a href="#" class="dashboard" style="color:white"><span class="glyphicon glyphicon-dashboard"></span></a></td>
+				<td width="100px"><a href="#" class="layoutoptions" style="color:white"><span class="glyphicon glyphicon-folder-open"></span></a></td>
+				<td width="100px"><a href="#" class="widgets" style="color:white"><span class="glyphicon glyphicon-th"></span></a></td>
+				<td width="100px">
+					<div class="btn-group">
+					  <div class="btn-group">
+						<a style="color:white" href="#" data-toggle="dropdown">
+						  <span class="fa fa-rocket"></span>
+						</a>
+						<ul class="dropdown-menu">
+						  <li><a href="#">Dropdown link</a></li>
+						  <li><a href="#">Dropdown link</a></li>
+						  <li class="dropdown-submenu">
+							<a class="test" tabindex="-1" href="#">New dropdown <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+							  <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+							  <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+							  <li class="dropdown-submenu">
+								<a class="test" href="#">Another dropdown <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+								  <li><a href="#">3rd level dropdown</a></li>
+								  <li><a href="#">3rd level dropdown</a></li>
+								</ul>
+							  </li>
+							</ul>
+						  </li>
+						</ul>
+					  </div>
+					</div>
+				</td>
+				<td width="100px">
+					<div class="btn-group">
+					  <div class="btn-group">
+						<a style="color:white" href="#" data-toggle="dropdown">
+						  <span class="glyphicon glyphicon-signal"></span>
+						</a>
+						<ul class="dropdown-menu">
+						  <li><a href="#">Dropdown link</a></li>
+						  <li><a href="#">Dropdown link</a></li>
+						  <li class="dropdown-submenu">
+							<a class="test" tabindex="-1" href="#">New dropdown <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+							  <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+							  <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+							  <li class="dropdown-submenu">
+								<a class="test" href="#">Another dropdown <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+								  <li><a href="#">3rd level dropdown</a></li>
+								  <li><a href="#">3rd level dropdown</a></li>
+								</ul>
+							  </li>
+							</ul>
+						  </li>
+						</ul>
+					  </div>
+					</div>
+				</td>
+				<td>
+				<form action="#" method="get" class="sidebar-form">
+					<div class="input-group" style="margin-right:20px">
+					  <input type="text" name="q" class="form-control" placeholder="Search...">
+					  <span class="input-group-btn">
+							<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+							</button>
+						  </span>
+					</div>
+				</form>
+				</td>
+				<td width="100px">
+				<img style="border-radius:50px;width:50px;height:50px;" src="http://www.codeproject.com/KB/GDI-plus/ImageProcessing2/img.jpg"/>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="table2" style="display:none">
+		<table align="right">
+			<tr>
+				<td width="100px">
+					<a href="#" id="button2" style="color:white"><span class="glyphicon glyphicon-align-justify"></span></a>
+				</td>
+				<td width="150px"><a href="#" class="dashboard"  style="color:white"><span class="glyphicon glyphicon-dashboard"></span>&nbsp; dashboard</a></td>
+				<td width="150px"><a href="#" class="layoutoptions" style="color:white"><span class="glyphicon glyphicon-folder-open"></span>&nbsp; layout options</a></td>
+				<td width="150px"><a href="#" class="widgets" style="color:white"><span class="glyphicon glyphicon-th"></span>&nbsp; widgets</a></td>
+				<td width="100px">
+				<div class="btn-group">
+					  <div class="btn-group">
+						<a style="color:white" href="#" data-toggle="dropdown">
+						  <span class="fa fa-rocket"></span>&nbsp; Dropdown
+						</a>
+						<ul class="dropdown-menu">
+						  <li><a href="#">Dropdown link</a></li>
+						  <li><a href="#">Dropdown link</a></li>
+						  <li class="dropdown-submenu">
+							<a class="test" tabindex="-1" href="#">New dropdown <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+							  <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+							  <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+							  <li class="dropdown-submenu">
+								<a class="test" href="#">Another dropdown <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+								  <li><a href="#">3rd level dropdown</a></li>
+								  <li><a href="#">3rd level dropdown</a></li>
+								</ul>
+							  </li>
+							</ul>
+						  </li>
+						</ul>
+					  </div>
+					</div>
+				</td>
+				<td>
+				<form action="#" method="get" class="sidebar-form">
+					<div class="input-group" style="margin-right:20px">
+					  <input type="text" name="q" class="form-control" placeholder="Search...">
+					  <span class="input-group-btn">
+							<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+							</button>
+						  </span>
+					</div>
+				</form>
+				</td>
+				<td width="200px"  style="color:white">
+					<img style="border-radius:50px;width:50px;height:50px;float:left;" src="http://www.codeproject.com/KB/GDI-plus/ImageProcessing2/img.jpg"/>
+					<div style="float:left;margin-left:20px">
+						<p>Cachorro</p>
+						<div style="background-color:green;border-radius:10px;width:10px;height:10px;float:left;margin-top:5px;margin-right:5px;"></div><p style="float:left;">Online</p>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div id="portal" style="float:left;background-color:#bcbbbd;width:100%;height:50px;display:none">
+	<table align="center">
+		<tr>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+		<tr style="color:white;">
+			<td width="8%" style="border-right: 1px solid white;text-align:center">
+				<div class="btn-group">
+				  <div class="btn-group">
+					<a style="color:white" href="#" data-toggle="dropdown">
+					  Assistentes
+					</a>
+					<ul class="dropdown-menu">
+					  <li><a href="#">Dropdown link</a></li>
+					  <li><a href="#">Dropdown link</a></li>
+					  <li class="dropdown-submenu">
+						<a class="test" tabindex="-1" href="#">New dropdown <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+						  <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+						  <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+						  <li class="dropdown-submenu">
+							<a class="test" href="#">Another dropdown <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+							  <li><a href="#">3rd level dropdown</a></li>
+							  <li><a href="#">3rd level dropdown</a></li>
+							</ul>
+						  </li>
+						</ul>
+					  </li>
+					</ul>
+				  </div>
+				</div>
+			</td>
+			<td width="8%" style="border-right: 1px solid white;text-align:center">
+				Operações
+			</td>
+			<td width="8%" style="border-right: 1px solid white;text-align:center">
+				Crédito
+			</td>
+			<td width="8%" style="border-right: 1px solid white;text-align:center">
+				Checagem
+			</td>
+			<td width="8%" style="border-right: 1px solid white;text-align:center">
+				Cobrança
+			</td>
+			<td width="8%" style="border-right: 1px solid white;text-align:center">
+				Financeiro
+			</td>
+			<td width="8%" style="border-right: 1px solid white;text-align:center">
+				Cadastro
+			</td>
+			<td width="8%" style="border-right: 1px solid white;text-align:center">
+				Formalização
+			</td>
+			<td width="8%" style="border-right: 1px solid white;text-align:center">
+				Comercial
+			</td>
+			<td width="8%" style="border-right: 1px solid white;text-align:center">
+				Superintendência
+			</td>
+			<td width="8%" style="border-right: 1px solid white;text-align:center">
+				Diretoria
+			</td>
+			<td width="8%" style="text-align:center">
+				Portal
+			</td>
+		</tr>
+	</table>
+</div>
+<div id="portal2" style="float:left;background-color:#adadad;width:100%;height:50px;display:none">
+	<table align="center">
+		<tr>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+		<tr style="color:white;">
+			<td width="8%" style="border-right: 1px solid white;text-align:center">
+				Financeiro
+			</td>
+			<td width="8%" style="border-right: 1px solid white;text-align:center">
+				Cadastro
+			</td>
+			<td width="8%" style="border-right: 1px solid white;text-align:center">
+				Formalização
+			</td>
+			<td width="8%" style="border-right: 1px solid white;text-align:center">
+				Comercial
+			</td>
+			<td width="8%" style="border-right: 1px solid white;text-align:center">
+				Superintendência
+			</td>
+			<td width="8%" style="border-right: 1px solid white;text-align:center">
+				Diretoria
+			</td>
+			<td width="8%" style="text-align:center">
+				Portal
+			</td>
+		</tr>
+	</table>
+</div>
+<div id="portalside" style="display:none;float:left;height:100%;width:15%;background-color:#9a9a9a">
+	<table align="center" style="color:white">
+		<tr height="30px">
+			<td>
+			<div class="btn-group">
+			  <div class="btn-group">
+				<a style="color:white" href="#" data-toggle="dropdown">
+				  Assistentes
+				</a>
+				<ul class="dropdown-menu">
+				  <li><a href="#">Dropdown link</a></li>
+				  <li><a href="#">Dropdown link</a></li>
+				  <li class="dropdown-submenu">
+					<a class="test" tabindex="-1" href="#">New dropdown <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+					  <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+					  <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+					  <li class="dropdown-submenu">
+						<a class="test" href="#">Another dropdown <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+						  <li><a href="#">3rd level dropdown</a></li>
+						  <li><a href="#">3rd level dropdown</a></li>
+						</ul>
+					  </li>
+					</ul>
+				  </li>
+				</ul>
+			  </div>
+			</div>
+			</td>
+		</tr>
+		<tr height="30px">
+			<td>Operações</td>
+		</tr>
+		<tr height="30px">
+			<td>Crédito</td>
+		</tr>
+		<tr height="30px">
+			<td>Checagem</td>
+		</tr>
+		<tr height="30px">
+			<td>Cobrança</td>
+		</tr>
+		<tr height="30px">
+			<td>Financeiro</td>
+		</tr>
+		<tr height="30px">
+			<td>Cadastro</td>
+		</tr>
+		<tr height="30px">
+			<td>Formalização</td>
+		</tr>
+		<tr height="30px">
+			<td>Comercial</td>
+		</tr>
+		<tr height="30px">
+			<td>Superintendência</td>
+		</tr>
+		<tr height="30px">
+			<td>Diretoria</td>
+		</tr>
+		<tr height="30px">
+			<td>Portal</td>
+		</tr>
+	</table>
+</div>
+<div style="text-align:center">
+	<br/><br/><br/><br/>
+		<h1>Main Page</h1>
+		<pre>O que é Lorem Ipsum?
+	Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, 
+	e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja 
+	de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só 
+	a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. 
+	Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum,
+	 e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.
+
+	Porque nós o usamos?
+	É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página
+	 quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição
+	 normal de letras, ao contrário de "Conteúdo aqui, conteúdo aqui", fazendo com que ele tenha uma aparência 
+	 similar a de um texto legível. Muitos softwares de publicação e editores de páginas na internet
+	 agora usam Lorem Ipsum como texto-modelo padrão, e uma rápida busca por 'lorem ipsum' mostra vários
+	 websites ainda em sua fase de construção. Várias versões novas surgiram ao longo dos anos, eventualmente 
+	 por acidente, e às vezes de propósito (injetando humor, e coisas do gênero).
+
+	</pre>
+	<div class="btn-group">
+	  <div class="btn-group">
+		<a style="color:black" href="#" data-toggle="dropdown">
+		  <span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu">
+		  <li><a href="#">Dropdown link</a></li>
+		  <li><a href="#">Dropdown link</a></li>
+		</ul>
+	  </div>
+	</div>
+</div>
+<div id="footer" style="background-color:white;width:100%;height:50px;text-align:center;bottom:0;position:fixed">
+	<br/>
+	Copyright Portal Lotus - Navbar v2.0
+</div>
+
+<script>
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script>
+</body>
+</html>

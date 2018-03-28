@@ -1,0 +1,184 @@
+﻿
+@{
+    ViewBag.Title = "Editar";
+}
+
+@using Objects.Geral
+@model PSNAL.Models.Unificador
+
+<h2>Editar</h2>
+
+<div class="nav-tabs-custom">
+    <!-- Tabs within a box -->
+    <ul class="nav nav-tabs pull-right">
+        <li class="active"><a href="#revenue-chart" data-toggle="tab">Dados Gerais</a></li>
+        <li class="pull-left header"><i class="fa fa-inbox"></i> User</li>
+    </ul>
+    <div class="tab-content no-padding">
+        @using (Html.BeginForm("Update", "Perfil", FormMethod.Post))
+        {
+            <!-- Morris chart - Sales -->
+            <div class="chart tab-pane active" id="revenue-chart" style="position: relative;">
+                <div class="col-xs-5">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td style="width: 10%">Id</td>
+                            <td>@Model.User.id</td>
+                            @Html.HiddenFor(x => x.User.id,new{ @class="form-control"})
+                        </tr>
+                        <tr>
+                            <td>Nome</td>
+                            <td>@Html.TextBoxFor(x => x.User.nome, new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>Login</td>
+                            <td>@Html.TextBoxFor(x => x.User.login, new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>E-Mail</td>
+                            <td>@Html.TextBoxFor(x => x.User.email, new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>Endereço</td>
+                            <td>@Html.TextBoxFor(x => x.User.endereco, new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>Peso</td>
+                            <td>@Model.User.peso</td>
+                            @Html.HiddenFor(x => x.User.peso)
+                        </tr>
+                        <tr>
+                            <td>Meta</td>
+                            @*vai ser um dropdownlist na verdade*@
+                            <td>@Html.TextBoxFor(x => x.User.meta, new { @class = "form-control" })</td>
+                        </tr>
+                    </table>
+                    <a href="@Url.Action("Index", "Perfil")" class="btn btn-default">Voltar</a>
+                    <input type="submit" value="Editar" class="btn btn-default"/>
+                </div>
+                <div class="col-xs-7">
+                    <div>
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Agenda</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <table style="width: 100%" class="table table-bordered table-striped">
+                                <thead>
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <th>Segunda</th>
+                                    <th>Terça</th>
+                                    <th>Quarta</th>
+                                    <th>Quinta</th>
+                                    <th>Sexta</th>
+                                    <th>Sábado</th>
+                                    <th>Domingo</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td style="height: 60px;">Manhã</td>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.agenda.DMSeg, new SelectList((List<SelectListItem>)ViewBag.ListaDieta,"Value","Text",ViewBag.ListaDieta),new{})<br/>
+                                        @Html.DropDownListFor(x => x.agenda.SMSeg, new SelectList((List<SelectListItem>)ViewBag.ListaSet, "Value", "Text", ViewBag.ListaSet), new { })
+                                    </td>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.agenda.DMTer, new SelectList((List<SelectListItem>)ViewBag.ListaDieta, "Value", "Text", ViewBag.ListaDieta), new { })<br />
+                                        @Html.DropDownListFor(x => x.agenda.SMTer, new SelectList((List<SelectListItem>)ViewBag.ListaSet, "Value", "Text", ViewBag.ListaSet), new { })
+                                    </td>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.agenda.DMQuar, new SelectList((List<SelectListItem>)ViewBag.ListaDieta, "Value", "Text", ViewBag.ListaDieta), new { })<br />
+                                        @Html.DropDownListFor(x => x.agenda.SMQuar, new SelectList((List<SelectListItem>)ViewBag.ListaSet, "Value", "Text", ViewBag.ListaSet), new { })
+                                    </td>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.agenda.DMQuin, new SelectList((List<SelectListItem>)ViewBag.ListaDieta, "Value", "Text", ViewBag.ListaDieta), new { })<br />
+                                        @Html.DropDownListFor(x => x.agenda.SMQuin, new SelectList((List<SelectListItem>)ViewBag.ListaSet, "Value", "Text", ViewBag.ListaSet), new { })
+                                    </td>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.agenda.DMSex, new SelectList((List<SelectListItem>)ViewBag.ListaDieta, "Value", "Text", ViewBag.ListaDieta), new { })<br />
+                                        @Html.DropDownListFor(x => x.agenda.SMSex, new SelectList((List<SelectListItem>)ViewBag.ListaSet, "Value", "Text", ViewBag.ListaSet), new { })
+                                    </td>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.agenda.DMSab, new SelectList((List<SelectListItem>)ViewBag.ListaDieta, "Value", "Text", ViewBag.ListaDieta), new { })<br/>
+                                        @Html.DropDownListFor(x => x.agenda.SMSab, new SelectList((List<SelectListItem>)ViewBag.ListaSet, "Value", "Text", ViewBag.ListaSet), new { })
+                                    </td>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.agenda.DMDom, new SelectList((List<SelectListItem>)ViewBag.ListaDieta, "Value", "Text", ViewBag.ListaDieta), new { })<br />
+                                        @Html.DropDownListFor(x => x.agenda.SMDom, new SelectList((List<SelectListItem>)ViewBag.ListaSet, "Value", "Text", ViewBag.ListaSet), new { })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 60px;">Tarde</td>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.agenda.DTSeg, new SelectList((List<SelectListItem>)ViewBag.ListaDieta, "Value", "Text", ViewBag.ListaDieta), new { })<br />
+                                        @Html.DropDownListFor(x => x.agenda.STSeg, new SelectList((List<SelectListItem>)ViewBag.ListaSet, "Value", "Text", ViewBag.ListaSet), new { })
+                                    </td>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.agenda.DTTer, new SelectList((List<SelectListItem>)ViewBag.ListaDieta, "Value", "Text", ViewBag.ListaDieta), new { })<br />
+                                        @Html.DropDownListFor(x => x.agenda.STTer, new SelectList((List<SelectListItem>)ViewBag.ListaSet, "Value", "Text", ViewBag.ListaSet), new { })
+                                    </td>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.agenda.DTQuar, new SelectList((List<SelectListItem>)ViewBag.ListaDieta, "Value", "Text", ViewBag.ListaDieta), new { })<br />
+                                        @Html.DropDownListFor(x => x.agenda.STQuar, new SelectList((List<SelectListItem>)ViewBag.ListaSet, "Value", "Text", ViewBag.ListaSet), new { })
+                                    </td>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.agenda.DTQuin, new SelectList((List<SelectListItem>)ViewBag.ListaDieta, "Value", "Text", ViewBag.ListaDieta), new { })<br />
+                                        @Html.DropDownListFor(x => x.agenda.STQuin, new SelectList((List<SelectListItem>)ViewBag.ListaSet, "Value", "Text", ViewBag.ListaSet), new { })
+                                    </td>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.agenda.DTSex, new SelectList((List<SelectListItem>)ViewBag.ListaDieta, "Value", "Text", ViewBag.ListaDieta), new { })<br />
+                                        @Html.DropDownListFor(x => x.agenda.STSex, new SelectList((List<SelectListItem>)ViewBag.ListaSet, "Value", "Text", ViewBag.ListaSet), new { })
+                                    </td>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.agenda.DTSab, new SelectList((List<SelectListItem>)ViewBag.ListaDieta, "Value", "Text", ViewBag.ListaDieta), new { })<br />
+                                        @Html.DropDownListFor(x => x.agenda.STSab, new SelectList((List<SelectListItem>)ViewBag.ListaSet, "Value", "Text", ViewBag.ListaSet), new { })
+                                    </td>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.agenda.DTDom, new SelectList((List<SelectListItem>)ViewBag.ListaDieta, "Value", "Text", ViewBag.ListaDieta), new { })<br />
+                                        @Html.DropDownListFor(x => x.agenda.STDom, new SelectList((List<SelectListItem>)ViewBag.ListaSet, "Value", "Text", ViewBag.ListaSet), new { })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 60px;">Noite</td>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.agenda.DNSeg, new SelectList((List<SelectListItem>)ViewBag.ListaDieta, "Value", "Text", ViewBag.ListaDieta), new { })<br />
+                                        @Html.DropDownListFor(x => x.agenda.SNSeg, new SelectList((List<SelectListItem>)ViewBag.ListaSet, "Value", "Text", ViewBag.ListaSet), new { })
+                                    </td>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.agenda.DNTer, new SelectList((List<SelectListItem>)ViewBag.ListaDieta, "Value", "Text", ViewBag.ListaDieta), new { })<br />
+                                        @Html.DropDownListFor(x => x.agenda.SNTer, new SelectList((List<SelectListItem>)ViewBag.ListaSet, "Value", "Text", ViewBag.ListaSet), new { })
+                                    </td>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.agenda.DNQuar, new SelectList((List<SelectListItem>)ViewBag.ListaDieta, "Value", "Text", ViewBag.ListaDieta), new { })<br />
+                                        @Html.DropDownListFor(x => x.agenda.SNQuar, new SelectList((List<SelectListItem>)ViewBag.ListaSet, "Value", "Text", ViewBag.ListaSet), new { })
+                                    </td>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.agenda.DNQuin, new SelectList((List<SelectListItem>)ViewBag.ListaDieta, "Value", "Text", ViewBag.ListaDieta), new { })<br />
+                                        @Html.DropDownListFor(x => x.agenda.SNQuin, new SelectList((List<SelectListItem>)ViewBag.ListaSet, "Value", "Text", ViewBag.ListaSet), new { })
+                                    </td>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.agenda.DNSex, new SelectList((List<SelectListItem>)ViewBag.ListaDieta, "Value", "Text", ViewBag.ListaDieta), new { })<br />
+                                        @Html.DropDownListFor(x => x.agenda.SNSex, new SelectList((List<SelectListItem>)ViewBag.ListaSet, "Value", "Text", ViewBag.ListaSet), new { })
+                                    </td>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.agenda.DNSab, new SelectList((List<SelectListItem>)ViewBag.ListaDieta, "Value", "Text", ViewBag.ListaDieta), new { })<br />
+                                        @Html.DropDownListFor(x => x.agenda.SNSab, new SelectList((List<SelectListItem>)ViewBag.ListaSet, "Value", "Text", ViewBag.ListaSet), new { })
+                                    </td>
+                                    <td>
+                                        @Html.DropDownListFor(x => x.agenda.DNDom, new SelectList((List<SelectListItem>)ViewBag.ListaDieta, "Value", "Text", ViewBag.ListaDieta), new { })<br />
+                                        @Html.DropDownListFor(x => x.agenda.SNDom, new SelectList((List<SelectListItem>)ViewBag.ListaSet, "Value", "Text", ViewBag.ListaSet), new { })
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="box-footer">
+
+    </div>
+</div>

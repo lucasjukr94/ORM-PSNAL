@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@using Objects.Geral
+@model PSNAL.Models.Unificador
+
+<h2>Profile</h2>
+
+<div class="nav-tabs-custom">
+    <!-- Tabs within a box -->
+    <ul class="nav nav-tabs pull-right">
+        <li class="active"><a href="#revenue-chart" data-toggle="tab">Dados Gerais</a></li>
+        <li><a href="#sales-chart" data-toggle="tab">Configurações</a></li>
+        <li class="pull-left header"><i class="fa fa-inbox"></i> User</li>
+    </ul>
+    <div class="tab-content no-padding">
+        <!-- Morris chart - Sales -->
+        <div class="chart tab-pane active" id="revenue-chart" style="position: relative;">
+            <div class="col-xs-5">
+                <table class="table table-bordered">
+                    <tr>
+                        <td style="width: 10%">Id</td>
+                        <td>@Model.User.id</td>
+                    </tr>
+                    <tr>
+                        <td>Nome</td>
+                        <td>@Model.User.nome</td>
+                    </tr>
+                    <tr>
+                        <td>Login</td>
+                        <td>@Model.User.login</td>
+                    </tr>
+                    <tr>
+                        <td>E-Mail</td>
+                        <td>@Model.User.email</td>
+                    </tr>
+                    <tr>
+                        <td>Endereço</td>
+                        <td>@Model.User.endereco</td>
+                    </tr>
+                    <tr>
+                        <td>Peso</td>
+                        <td>@Model.User.peso</td>
+                    </tr>
+                    <tr>
+                        <td>Meta</td>
+                        <td>@Model.User.meta</td>
+                    </tr>
+                </table>
+                <a href="@Url.Action("Editar", "Perfil")" class="btn btn-default">Editar</a>
+            </div>
+            <div class="col-xs-7">
+                @Html.Partial("Agenda", Model.agenda)
+            </div>
+        </div>
+        <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
+            b
+        </div>
+    </div>
+    <div class="box-footer">
+        
+    </div>
+</div>

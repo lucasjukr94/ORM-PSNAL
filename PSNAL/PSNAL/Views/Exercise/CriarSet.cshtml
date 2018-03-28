@@ -1,0 +1,37 @@
+﻿@using System.ServiceModel.Dispatcher
+@model PSNAL.Models.Unificador
+
+@{
+    ViewBag.Title = "CriarSet";
+}
+
+<h2>Criar Set</h2>
+
+<div class="box box-primary">
+    <div class="box-header with-border">
+        <h3 class="box-title">Dieta</h3>
+    </div>
+    <!-- /.box-header -->
+    <!-- form start -->
+    <form action="@Url.Action("AdicionarSet","Exercise")" method="POST">
+        <div class="box-body">
+            <div class="form-group">
+                <label>Nome</label>
+                @Html.TextBoxFor(x => x.set.nome, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Descrição</label>
+                @Html.TextBoxFor(x => x.set.descricao, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label style="float: left;">Exercício&nbsp;</label>
+                @Html.ListBoxFor(x => x.lista, new SelectList((List<SelectListItem>)ViewBag.ListaExercicio, "Value", "Text", ViewBag.ListaExercicio), new { select = "multiple", style = "width:200px;float:left" })
+            </div>
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+            <a href="@Url.Action("ListaSet","Exercise")" class="btn btn-primary">Voltar</a>
+            <button type="submit" class="btn btn-primary">Adicionar</button>
+        </div>
+    </form>
+</div>

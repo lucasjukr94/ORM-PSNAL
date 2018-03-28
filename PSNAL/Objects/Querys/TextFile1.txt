@@ -1,0 +1,71 @@
+﻿use PSNAL
+
+create table tbl_user(
+	idUser bigint identity(1,1) primary key,
+	login nvarchar(200),
+	senha nvarchar(200),
+	nome nvarchar(200),
+	endereco nvarchar(200),
+	lat decimal,
+	long decimal,
+	met decimal,
+	peso decimal,
+	limite decimal,
+	doenca int,
+	descericao nvarchar(500)
+)
+
+create table tbl_food(
+	idFood bigint identity(1,1) primary key,
+	nome nvarchar(200),
+	descricao nvarchar(500),
+	calpergram decimal,
+	preco decimal,
+	gordTrans decimal,
+	A decimal,
+	B decimal,
+	C decimal,
+	D decimal,
+	Na decimal,
+	K decimal
+)
+
+create table tbl_exercicio(
+	idEx bigint identity(1,1) primary key,
+	nome nvarchar(200),
+	descricao nvarchar(200),
+	calpertime decimal,
+	braco int,
+	perna int,
+	torax int,
+	abdomen int,
+	biceps int,
+	triceps int,
+	batata int,
+	coxa int,
+	costas int
+)
+
+create table tbl_treino(
+	idTreino bigint identity(1,1),
+	tempo time,
+	exercicio int,
+	exerUsuario int
+)
+
+create table tbl_exerUsuario(
+	idExUs bigint identity(1,1),
+	userid int
+)
+
+create table tbl_dieta(
+	idDieta bigint identity(1,1),
+	foodid int,
+	dietUsuario int,
+	peso decimal
+)
+
+create table tbl_dietUsuario(
+	idDiUs bigint identity(1,1),
+	userid int
+)

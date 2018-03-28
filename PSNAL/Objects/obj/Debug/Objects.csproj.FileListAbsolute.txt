@@ -1,0 +1,14 @@
+c:\DEV\PSNAL\Objects\bin\Debug\Objects.dll
+c:\DEV\PSNAL\Objects\bin\Debug\Objects.pdb
+c:\DEV\PSNAL\Objects\obj\Debug\Objects.csprojResolveAssemblyReference.cache
+c:\DEV\PSNAL\Objects\obj\Debug\Activity1.g.xaml
+c:\DEV\PSNAL\Objects\obj\Debug\Objects_Activity1_BeforeInitializeComponentHelper.txt
+c:\DEV\PSNAL\Objects\obj\Debug\_Objects.g.cs
+c:\DEV\PSNAL\Objects\obj\Debug\Activity1.g.cs
+c:\DEV\PSNAL\Objects\obj\Debug\Objects_Activity1_BeforeInitializeComponentHelper.cs
+c:\DEV\PSNAL\Objects\obj\Debug\Objects.csproj.XamlGeneratedCodeFileListAbsolute.txt
+c:\DEV\PSNAL\Objects\obj\Debug\Objects.csproj.XamlGeneratedXamlFileListAbsolute.txt
+c:\DEV\PSNAL\Objects\obj\Debug\Objects.dll
+c:\DEV\PSNAL\Objects\obj\Debug\Objects.pdb
+c:\DEV\PSNAL\Objects\obj\Debug\AC2C1ABA-CCF6-44D4-8127-588FD4D0A860-DeferredValidationErrors.xml
+c:\DEV\PSNAL\Objects\obj\Debug\Objects.csproj.FileListAbsolute.txt
